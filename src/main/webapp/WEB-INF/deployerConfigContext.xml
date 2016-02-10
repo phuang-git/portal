@@ -61,7 +61,9 @@
                    | set its name to something other than its default name (typically the simple class name).
                    -->
                 <entry key-ref="proxyAuthenticationHandler" value-ref="proxyPrincipalResolver" />
-                <entry key-ref="primaryAuthenticationHandler" value-ref="primaryPrincipalResolver" />
+                <!--<entry key-ref="primaryAuthenticationHandler" value-ref="primaryPrincipalResolver" />-->
+                <entry  key-ref="dbAuthHandler" value-ref="primaryPrincipalResolver" />
+
             </map>
         </constructor-arg>
 
@@ -166,4 +168,23 @@
               p:serviceTicketCountWarnThreshold="5000"
               p:sessionCountWarnThreshold="100000" />
     </util:list>
+
+    <!-- 连接数据库-->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          p:driverClass="com.mysql.jdbc.Driver"
+          p:jdbcUrl="jdbc:mysql://localhost:3306/mcfield?useUnicode=true&amp;characterEncoding=UTF-8&amp;allowMultiQueries=true"
+          p:user="root"
+          p:password="" />
+
+    <!-- 添加md5加密 -->
+    <bean id="passwordEncoder" class="com.echounion.portal.util.kit.ShiroKit" />
+
+    <bean id="dbAuthHandler" class="com.echounion.portal.util.MyQueryDatabaseAuthenticationHandler"
+            p:dataSource-ref="dataSource"
+            p:passwordEncoder-ref="passwordEncoder"
+            p:sql="select password from sys_user where username=?" />
+
+
+
+
 </beans>
