@@ -80,7 +80,7 @@ header {
 
 #logo {
     display: block;
-    background: url(../images/logo.png) no-repeat;
+    background: url(../images/logoTitle.png) no-repeat;
     text-indent: -999em;
     float: left;
     height: 100px;
@@ -91,9 +91,9 @@ header {
 
 header h1 {
     float: right;
-    width: 119px;
+    width: 150px;
     height: 60px;
-    background: url(../images/cas-logo.png) no-repeat;
+    background: url(../images/logoRight.png) no-repeat;
     text-indent: -999em;
 }
 
@@ -159,6 +159,7 @@ header h1 {
 
 #login .row {
     padding: 10px 0;
+    margin-left: 0px;
 }
 
 #login label {
@@ -256,4 +257,7 @@ footer a:link, footer a:visited {
     #sidebar { margin-top: 20px; }
     #sidebar .sidebar-content { padding: 0; }
 }
+
+
+
 

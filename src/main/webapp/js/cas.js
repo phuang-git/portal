@@ -17,10 +17,11 @@
  * under the License.
  */
 
-var scripts = [ "https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js",
-    "https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js",
-    "https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js",
-    "https://cdn.rawgit.com/cowboy/javascript-debug/master/ba-debug.min.js"];
+var scripts = [ domain+"/plugins/jquery/jquery.min.js",
+    domain+"/plugins/jquery/jquery-ui.min.js",
+    domain+"/plugins/jquery/jquery.cookie.min.js",
+    domain+"/plugins/jquery/ba-debug.min.js",
+    domain+"/plugins/bootstrap/js/bootstrap.min.js"];
 
 head.ready(document, function() {
     head.load(scripts, resourceLoadedSuccessfully);

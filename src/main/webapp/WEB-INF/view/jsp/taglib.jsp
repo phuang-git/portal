@@ -31,6 +31,7 @@
 <c:set var="contextPath" value="<%=cbasePath %>" />
 <c:set var="cssBasePath" value="${contextPath}/css" />
 <c:set var="scriptBasePath" value="${contextPath}/js" />
+<c:set var="imgBasePath" value="${contextPath}/images" />
 <script type="text/javascript">
 	<%-- 全局js变量 --%>
 	var domain='${contextPath}';
