@@ -95,7 +95,7 @@
           c:trustStorePassword="${http.client.truststore.psw:changeit}"/>
 
     <bean id="supportsTrustStoreSslSocketFactoryHttpClient" class="org.jasig.cas.util.http.SimpleHttpClientFactoryBean"
-          parent="httpClient" p:sslSocketFactory-ref="trustStoreSslSocketFactory"/>
+          parent="httpClient" p:sslSocketFactory-ref="trustStoreSslSocketFactory" />
 
 
     <bean id="logoutManager" class="org.jasig.cas.logout.LogoutManagerImpl"
